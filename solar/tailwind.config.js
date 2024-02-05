@@ -9,7 +9,13 @@ module.exports = {
     extend: {
       animation: {
         shine: 'shine 4s ease-in-out infinite',
-        slide: 'slide 5s ease-in-out'
+        slide: 'slide 0.5s ease-in-out', 
+      },
+      keyframes: { 
+        slide: {
+          '0%': { transform: 'translateY(100%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

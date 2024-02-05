@@ -8,7 +8,7 @@ export default function WeeklyGraph({daytimeDataWeek, daytimeDataBarWidthWeek, p
         <>
         {/* WEEK CONTAINER */}
         <section className="fixed bottom-0 w-full">
-            <div className="graph" key="graph">
+            <div className="graph animate-slide" key="graph">
                 {daytimeDataWeek.reverse().map((dataPoint, index) => (dataPoint[1].includes("09:00:00")) ? (
                 <React.Fragment key={`${index}-frag`} >
                 <div className="verticalstrip" key={index}>
