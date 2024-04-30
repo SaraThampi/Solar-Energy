@@ -74,8 +74,6 @@
   grid-template-columns: 50% 50%;
   grid-template-rows: 35% 60%;
 }
-
-
 @keyframes shine {
   50% {
     box-shadow: 0 0 20px rgb(255, 220, 114), 
