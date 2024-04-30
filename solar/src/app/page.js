@@ -22,11 +22,22 @@ let startingDateMonth = getStartingDate(31)
 let startingDateYear = getStartingDate(365)
 
 // SOLAR FETCH
-async function getSolar(startingDate, startingTime, EndDate, EndTime) {
-  const res = await fetch (`https://api.solar.sheffield.ac.uk/pvlive/api/v4/pes/0?start=${startingDate}T${startingTime}&end=${EndDate}T${EndTime}`)
-  return res.json()
-}
+// async function getSolar(startingDate, startingTime, EndDate, EndTime) {
+//   const res = await fetch (`https://api.solar.sheffield.ac.uk/pvlive/api/v4/pes/0?start=${startingDate}T${startingTime}&end=${EndDate}T${EndTime}`)
+//   return res.json()
+// }
 // 
+
+async function getSolar(startingDate, startingTime, EndDate, EndTime) {
+  const apiUrl = `https://api.solar.sheffield.ac.uk/pvlive/api/v4/pes/0?start=${startingDate}T${startingTime}&end=${EndDate}T${EndTime}`;
+  const res = await fetch(apiUrl, {
+    headers: {
+      'Cache-Control': 'no-cache'
+    },
+    cache: 'no-store'
+  });
+  return res.json();
+}
 
 // HELPER FUNCTIONS
 
